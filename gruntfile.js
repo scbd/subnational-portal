@@ -61,6 +61,12 @@ module.exports = function (grunt) {
             cwd   : 'app/libs/',
             src   : ['**/*'],
             dest  : 'app_build/libs/'
+          },
+          {
+            expand: true,
+            cwd   : 'app/img/',
+            src   : ['**/*'],
+            dest  : 'app_build/img/'
           }
         ]
       }
@@ -109,6 +115,11 @@ module.exports = function (grunt) {
     css: {
       compile: [/*'sass', */'autoprefixer'],
       compress: ['csso']
+    },
+    bower: {
+      install: {
+        //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
+      }
     }
   });
 
@@ -120,13 +131,14 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-csso');
   grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-bower-task');
 
   // register css task to have option to separate styles compilation and build
   grunt.registerMultiTask('css', function () {
     grunt.task.run(this.data);
   });
 
-  grunt.registerTask('build-js', ['copy', 'requirejs', 'uglify']);
+  grunt.registerTask('build-js', ['bower', 'copy', 'requirejs', 'uglify']);
   grunt.registerTask('build-css', ['css']);
   grunt.registerTask('build', ['build-js', 'build-css']);
 
