@@ -5293,34 +5293,6 @@ footer .logo {
 
   background-size: 100%;
 }
-#main-nav .logo {
-  margin-left: -30px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 70px;
-  display: block;
-  width: 90%;
-  height: 155px;
-  background: #89cf31; /* #a8cd1b; */
-  margin-bottom: -30px;
-  text-align: center;
-  -webkit-border-bottom-right-radius: 4px;
-  -moz-border-radius-bottomright: 4px;
-  border-bottom-right-radius: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  -moz-border-radius-bottomleft: 4px;
-  border-bottom-left-radius: 4px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-#main-nav .logo img {
-  /*padding-top: 85px;*/
-  padding-bottom: 15px;
-}
-#main-nav .logo a:hover {
-  text-decoration: none;
-}
 .navbar-collapse {
   padding-left: 0;
 }

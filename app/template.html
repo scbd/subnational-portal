@@ -44,6 +44,10 @@
             background-color: rgba(0,0,0,0.50);
             border-bottom: 1px solid black;
         }
+        #main-nav .logo img {
+          margin-top: 16px;
+          max-height: 65px;
+        }
     </style>
 </head>
 <body ng-controller="TemplateController" ng-class="{'home-page':xhomePage}">
@@ -51,22 +55,11 @@
         <div class="header-banner" style="position:absolute;width:100%;height:140px"></div>
         <div class="container" id="main-nav">
             <div class="row">
-                <a href="https://www.cbd.int">
-                <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs" style="margin-top:16px">
-                    <span href="http://www.cbd.int/" style="cursor:pointer">
-                        <img src="//www.cbd.int/styles/ui/templates/cbd2011/images/logo-cbd-leaf-line.gif" alt="CBD logo">
-                        <img src="//www.cbd.int/styles/ui/templates/cbd2011/images/logo-cbd-text-en.gif" alt="CBD logo" style="">
-                    </span>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <a class="logo" href="http://www.cbd.int/" title="Convention on Biological Diversity">
+                        <img src="/app/img/cbd-logo-en.min.svg" class="svg" alt="CBD Logo">
+                    </a>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 visible-xs">
-                    <span class="logo" href="http://www.cbd.int/" style="position:relative;z-index:999;cursor:pointer">
-                        <div style="font-size:24px;color:#f8f8f8">
-                           <img src="//www.cbd.int/styles/ui/templates/cbd2011/images/logo-cbd-leaf-line.gif" class="svg" alt="CBD logo">
-                            <img src="//www.cbd.int/styles/ui/templates/cbd2011/images/logo-cbd-text-en.gif" class="svg" alt="CBD logo" style="">
-                        </div>
-                    </span>
-                </div>
-                </a>
                 <div class="col-lg-5 col-md-5 col-sm-5">
                     <div class="navbar visible-xs">
                         <div class="navbar-header">
@@ -133,7 +126,7 @@
             <div class="row" style="max-height:120px;overflow:hidden">
                 <div class="col-sm-12">
                     <div style="position:absolute;width:100%">
-                        <img src="//www.cbd.int/images/banners/banner-0-3701.jpg" style="width:100%">
+                        <img src="/app/img/banner.jpg" style="width:100%">
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-3">
@@ -206,7 +199,6 @@
         </div>
         <div class="row copyright">
             <div class="col-lg-6 col-md-6 col-sm-6 logorow">
-                <a href="http://www.cbd.int/" class="logo" style="height:60px"></a>
                 <p style="margin-top:-8px">© 2013 SCBD | <a href="http://www.cbd.int/privacy">Privacy Policy</a> | <a href="http://www.cbd.int/terms">Terms of Use</a></p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
