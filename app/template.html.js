@@ -6,7 +6,7 @@ define(['app'], function (app) {
     	$scope.controller = "TemplateController";
 
     	_loadCss('/app/libs/font-awesome/css/font-awesome.css');
-        _loadCss('//fast.fonts.net/cssapi/ab363dc0-d9f9-4148-a52d-4dca15df47ba.css');
+        //_loadCss('//fast.fonts.net/cssapi/ab363dc0-d9f9-4148-a52d-4dca15df47ba.css');
 
 	}]);
 
