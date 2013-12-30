@@ -1,0 +1,12 @@
+{
+  "name": "accounts-cbd-int",
+  "description": "Source files for accounts.cbd.int",
+  "dependencies": {
+    "express": "3.4.x",
+    "http-proxy": "0.10.x"
+  },
+  "devDependencies": {
+    "awsbox": "0.6.x"
+  },
+  "engine": "node >= 0.10.18"
+}
