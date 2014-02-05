@@ -14,7 +14,7 @@ define(['app', 'jquery'], function (app, $) {
 
     $(document).ready(function() {
 		$('#homeCarousel').carousel({
-	         interval: 15000
+	         interval: 6000
 		 });
     });
 

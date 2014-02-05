@@ -1,13 +1,19 @@
 <script src="/app/views/resources/resources.html.js"></script>
 
+<div class="row hidden-xs">
+    <div class="col-sm-12">     
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">Resources</li>
+        </ol>
+    </div>
+</div>
 <div class="row">
-    <ol class="breadcrumb">
-      <li><a href="/">Home</a></li>
-      <li class="active">Resources</li>
-    </ol>
+    <div class="col-xs-12">
+        <h1>Resources</h1>
+    </div>
 </div>
 <div class="row" ng-controller="ResourcesPageController">
-	<h2>Resources</h2>
     <div class="col-sm-6">
     	<p class="well"><a href="/resources/decisions">Decisions</a></p>
     	<p class="well"><a href="/resources/documents">Documents</a></p>

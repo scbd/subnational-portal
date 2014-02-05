@@ -134,7 +134,7 @@
                                 <li class="disabled"><a>Русский</a></li>
                             </ul>
                         </li>
-                        <li ng-cloak ng-hide="user.isAuthenticated" style="border-right:none;padding-right:0">
+                        <li ng-cloak ng-hide="user.isAuthenticated" style="display:none; border-right:none;padding-right:0">
                             <a class="signin" href="/management/signin" data-slug="signin"><i class="icon-off" style="font-size:15px"></i>&nbsp; Sign In</a>
                         </li>
                         <li ng-cloak class="dropdown" ng-show="user.isAuthenticated" style="border-right:none;padding-right:0">
@@ -262,19 +262,14 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <ul class="social clearfix">
-                <li><a href="http://twitter.com/scbd" class="twitter"></a></li>
-                <li><a href="http://www.linkedin.com/company/scbd" class="linkedin"></a></li>
-                <li><a href="https://www.facebook.com/scbd" class="facebook"></a></li>
-                <li><a href="https://plus.google.com/0000/posts" class="google"></a></li>
+                <li><a href="http://twitter.com/cbdnews" class="twitter"></a></li>
+                <!-- <li><a href="http://www.linkedin.com/company/scbd" class="linkedin"></a></li> -->
+                <li><a href="https://www.facebook.com/UNBiodiversity" class="facebook"></a></li>
+             <!--    <li><a href="https://plus.google.com/0000/posts" class="google"></a></li> -->
                 <li><a href="/database/news" class="rss"></a></li>
             </ul>
         </div>
     </footer>
     <script src="/app/libs/requirejs/require.js" data-main="/app/js/boot.js"></script>
-    <script>
-
-
-
-    </script>
 </body>
 </html>

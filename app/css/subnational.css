@@ -1,22 +1,3 @@
-
-
-
-h2.title {
-	font-family: 'Open Sans Condensed',sans-serif;
-	width: 100%;
-	margin-top:  0;
-	height: 45px;
-	color: #333;
-	line-height: 45px;
-	padding: 0 15px;
-	margin-bottom: 10px;
-	background: url(/app/img/sn-bkg-medium-gray.gif) repeat-y;
-	/*font-size: 26px;*/
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-}
-
 .title1 {
 	background: url(/app/img/sn-bkg-medium-gray.gif) repeat ;
 
@@ -30,4 +11,8 @@ h2.title {
 
 a {
 	color: #06C;
+}
+
+.header-actions li {
+	border-right: none;
 }
