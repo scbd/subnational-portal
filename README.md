@@ -1,4 +1,4 @@
-accounts.cbd.int
+subnational.cbd.int
 ================
 
-https://accounts.cbd.int
+https://www.cbd.int/subnational

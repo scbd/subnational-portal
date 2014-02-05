@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Clearing-House Mechanism</title>
+    <title>Subnational and Local Implementation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Clearing-House Mechanism of the Convention on Biological Diversity">
+    <meta name="description" content="Subnational and Local Implementation">
     <link rel="shortcut icon" href="/app/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="/app/libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/app/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/app/css/subnational.css">
     <style>[ng\:cloak], [ng-cloak], .ng-cloak { display: none !important; }</style>
     <style>
         .nav > li > a {
@@ -45,22 +46,46 @@
             border-bottom: 1px solid black;
         }
         #main-nav .logo img {
-          margin-top: 16px;
-          max-height: 65px;
+            margin-top: 16px;
+            max-height: 65px;
         }
+        .carousel-control {
+            padding-top: 2%;
+            color: #333;
+            width: 4%;
+        }
+        #double li { 
+            line-height:1.5em;
+            float:left;
+            display:inline;
+            width:45%;
+        }
+        #double  { 
+            width:62%;
+        } 
+        .nav {
+           border-right: 1px solid #999 !important;
+        }
+        ul.nav+.subnav {
+            border: none !important;
+        }                   
     </style>
+
+
 </head>
 <body ng-controller="TemplateController" ng-class="{'home-page':xhomePage}">
     <div>
         <div class="header-banner" style="position:absolute;width:100%;height:140px"></div>
         <div class="container" id="main-nav">
+
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-3">
                     <a class="logo" href="http://www.cbd.int/" title="Convention on Biological Diversity">
                         <img src="/app/img/cbd-logo-en.min.svg" class="svg" alt="CBD Logo">
                     </a>
                 </div>
-                <div class="col-lg-5 col-md-5 col-sm-5">
+
+                <div class="col-lg-7 col-md-7 col-sm-7">
                     <div class="navbar visible-xs">
                         <div class="navbar-header">
                             <a class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -69,34 +94,34 @@
                                 <span class="icon-bar"></span>
                             </a>
                             <ul class="header-actions">
-                                <li ng-hide="currentPath()=='/database/'">
+                                <!-- <li ng-hide="currentPath()=='/database/'">
                                     <form action="/search" style="display: none;" class="site-search">
                                         <input type="text" placeholder="Search the CHM" name="q" />
                                         <input type="submit" value="" style="width:200px" />
                                     </form>
-                                    <a href="" class="search-icon"></a>
-                                </li>
-                                <li><a href="/database/news" style="color:black">News</a></li>
+                                    <a href="" class="search-icon"></a
+                                </li> 
+                                <li><a href="/database/news" style="color:black">News</a></li>-->
                                 <li><a class="icon icon-globe" style="color:black">&nbsp;Language: EN</a></li>
-                                <li><a class="signin" href="/database" data-slug="signin" style="color:black">Search</a></li>
+                                <!-- <li><a class="signin" href="/database" data-slug="signin" style="color:black">Search</a></li> -->
                             </ul>
                         </div>
                     </div>
+
                     <div class="navbar-collapse collapse">
-                        <ul class="nav">
-                            <li><a ng-class="{active: portal=='home'}" href="/profile">Account</a></li>
-                            <li><a ng-class="{active: portal=='home'}" href="/admin/users">User management</a></li>
+                        <ul class="nav" >
+                            <li><a ng-class="{active: portal=='home'}" href="/">Home</a></li>
+                            <li><a ng-class="{active: portal=='resources'}" href="/resources">Resources</a></li>
+                            <li><a ng-class="{active: portal=='partners-and-initiatives'}" href="/partners-and-initiatives">Partners and Initiatives</a></li>
                         </ul>
-                         <ul class="nav subnav">
-                            <li><a ng-class="{active: portal=='resources'}" href="/password">Password</a></li>
-                            <li><a ng-class="{active: portal=='resources'}" href="/recovery">Recovery options</a></li>
-                            <li><a ng-class="{active: portal=='resources'}" href="/activity">Recent activity</a></li>
-                            <!-- <li><a ng-class="{active: portal=='about'}" href="/twofactor">Two-factor authentication</a></li> -->
+                         <ul class="nav subnav ng-hide="homePage" id="double">
+                            <li ng-repeat="item in navigation"><a ng-class="{active: item.url==currentPath()}" ng-href="{{item.url}}">{{item.title}}</a></li>
                         </ul>
-                        <p class="visible-xs">Get Started <a href="/database/" class="getstarted">Search</a></p>
+                        <!-- <p class="visible-xs">Get Started <a href="/database/" class="getstarted">Search</a></p> -->
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 hidden-xs" style="height:100px">
+                </div> 
+
+                <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs" style="height:100px">
                     <ul class="header-actions">
                         <li class="dropdown">
                             <a data-toggle="dropdown" href="#"><i class="icon icon-globe" style="font-size:15px"></i>&nbsp; Language: <strong>EN</strong></a>
@@ -123,23 +148,57 @@
                     </ul>
                 </div>
             </div>
-            <div class="row" style="max-height:120px;overflow:hidden">
-                <div class="col-sm-12">
-                    <div style="position:absolute;width:100%">
+            <div class="row" >
+                <div class="col-sm-12" style="position:relative;"">
+                    <div>
                         <img src="/app/img/banner.jpg" style="width:100%">
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-3">
-                    <div style="background-color:rgba(0,0,0,0.4);height:120px;padding-top:20px;padding-left:18px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:24px;font-weight:bold;color:#fff">
-                        Accounts
+                    <div style="position:absolute; top:20%; left: -1%;">
+                        <img src="/app/img/subnational-title.png" alt="Subnational and Local Implementation"  > 
                     </div>
-                </div>
+                </div>  
             </div>
         </div>
     </div>
     <div class="container page-content">
         <ng-view></ng-view>
     </div>
+    <!-- begin carousel -->
+    <div class="container carouselContainer hidden-xs">
+        <div class="row hidden-xs">
+            <div class="col-sm-12" ng-hide="currentPath()=='/help/404'">
+                <h3>Partners and Initiatives</h3>
+                <div class="well">
+                    <div id="homeCarousel" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-sm-3 text-center"><a href="/partners-and-initiatives/iclei" ><img src="/app/img/iclei.png" alt="Image" class="img-responsive text-center">ICLEI - Local Governments for Sustainability</a></div>
+                                    <div class="col-sm-3"><a href="/partners-and-initiatives/nrg4sd" ><img src="/app/img/nrg4sd.png" alt="Image" class="img-responsive">The Network of Regional Governments for Sustainable Development</a></div>
+                                    <div class="col-sm-3"><a href="/partners-and-initiatives/urbio" ><img src="/app/img/urbio.png" alt="Image" class="img-responsive">Urban Biodiversity & Design</a></div>
+                                    <div class="col-sm-3"><a href="/partners-and-initiatives/stockholm-resilience-centre" ><img src="/app/img/src.png" alt="Image" class="img-responsive">Stockholm Resilience Centre</a></div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-3"><a href="/partners-and-initiatives/un-habitat" ><img src="/app/img/un-habitat.png" alt="Image" class="img-responsive">UN-HABITAT</a></div>
+                                    <div class="col-sm-3"><a href="/partners-and-initiatives/nrg4sd" ><img src="/app/img/nrg4sd.png" alt="Image" class="img-responsive">The Network of Regional Governments for Sustainable Development</a></div>
+                                    <div class="col-sm-3"><a href="/partners-and-initiatives/urbio" ><img src="/app/img/urbio.png" alt="Image" class="img-responsive">Urban Biodiversity & Design</a></div>
+                                    <div class="col-sm-3"><a href="/partners-and-initiatives/stockholm-resilience-centre" ><img src="/app/img/src.png" alt="Image" class="img-responsive">Stockholm Resilience Centre</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="left carousel-control" href="#homeCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                        <a class="right carousel-control" href="#homeCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end carousel -->
+
+
     <footer class="footer">
         <div class="container" id="footer">
         <div class="row hidden-xs">
@@ -212,6 +271,10 @@
         </div>
     </footer>
     <script src="/app/libs/requirejs/require.js" data-main="/app/js/boot.js"></script>
+    <script>
 
+
+
+    </script>
 </body>
 </html>

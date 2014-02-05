@@ -1,6 +1,6 @@
 {
-  "name": "accounts-cbd-int",
-  "description": "Source files for accounts.cbd.int",
+  "name": "subnational-cbd-int",
+  "description": "Source files for subnational.cbd.int",
   "dependencies": {
     "express": "3.4.x",
     "http-proxy": "0.10.x",

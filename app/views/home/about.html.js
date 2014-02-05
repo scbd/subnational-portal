@@ -1,7 +1,8 @@
-require('app').controller('IndexController', ['$scope', '$rootScope', function ($scope, $rootScope) {
-	$scope.controller = "IndexController";
 
-	$rootScope.homePage = true;
+require('app').controller('AboutPageController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+	$scope.controller = 'AboutPageController';
+
+	$rootScope.homePage = false;
 	$rootScope.portal = 'home';
 	$rootScope.navigation = [
 			{ url: '/about', 							title: 'About' },
@@ -11,3 +12,6 @@ require('app').controller('IndexController', ['$scope', '$rootScope', function (
 			{ url: '/guidelines', 						title: 'Guidelines' }
 		];
 }]);
+
+
+
