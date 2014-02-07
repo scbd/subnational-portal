@@ -110,14 +110,14 @@
 
                     <div class="navbar-collapse collapse">
                         <ul class="nav" >
-                            <li><a ng-class="{active: portal=='home'}" href="/">Home</a></li>
-                            <li><a ng-class="{active: portal=='resources'}" href="/resources">Resources</a></li>
-                            <li><a ng-class="{active: portal=='partners-and-initiatives'}" href="/partners-and-initiatives">Partners and Initiatives</a></li>
+                            <li><a ng-class="{active: portal=='home'}" href="/subnational/">Home</a></li>
+                            <li><a ng-class="{active: portal=='resources'}" href="/subnational/resources">Resources</a></li>
+                            <li><a ng-class="{active: portal=='partners-and-initiatives'}" href="/subnational/partners-and-initiatives">Partners and Initiatives</a></li>
                         </ul>
                          <ul class="nav subnav ng-hide="homePage" id="double">
                             <li ng-repeat="item in navigation"><a ng-class="{active: item.url==currentPath()}" ng-href="{{item.url}}">{{item.title}}</a></li>
                         </ul>
-                        <!-- <p class="visible-xs">Get Started <a href="/database/" class="getstarted">Search</a></p> -->
+                        <!-- <p class="visible-xs">Get Started <a href="/subnational/database/" class="getstarted">Search</a></p> -->
                     </div>
                 </div> 
 
@@ -135,7 +135,7 @@
                             </ul>
                         </li>
                         <li ng-cloak ng-hide="user.isAuthenticated" style="display:none; border-right:none;padding-right:0">
-                            <a class="signin" href="/management/signin" data-slug="signin"><i class="icon-off" style="font-size:15px"></i>&nbsp; Sign In</a>
+                            <a class="signin" href="/subnational/management/signin" data-slug="signin"><i class="icon-off" style="font-size:15px"></i>&nbsp; Sign In</a>
                         </li>
                         <li ng-cloak class="dropdown" ng-show="user.isAuthenticated" style="border-right:none;padding-right:0">
                             <a data-toggle="dropdown" href="#"><i class="icon-chevron-down" style="font-size:15px"></i>&nbsp; {{user.name}}</a>
@@ -173,18 +173,18 @@
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="row">
-                                    <div class="col-sm-3 text-center"><a href="/partners-and-initiatives/iclei" ><img src="/app/img/iclei.png" alt="Image" class="img-responsive text-center">ICLEI - Local Governments for Sustainability</a></div>
-                                    <div class="col-sm-3"><a href="/partners-and-initiatives/nrg4sd" ><img src="/app/img/nrg4sd.png" alt="Image" class="img-responsive">The Network of Regional Governments for Sustainable Development</a></div>
-                                    <div class="col-sm-3"><a href="/partners-and-initiatives/urbio" ><img src="/app/img/urbio.png" alt="Image" class="img-responsive">Urban Biodiversity & Design</a></div>
-                                    <div class="col-sm-3"><a href="/partners-and-initiatives/stockholm-resilience-centre" ><img src="/app/img/src.png" alt="Image" class="img-responsive">Stockholm Resilience Centre</a></div>
+                                    <div class="col-sm-3 text-center"><a href="/subnational/partners-and-initiatives/iclei" ><img src="/app/img/iclei.png" alt="Image" class="img-responsive text-center">ICLEI - Local Governments for Sustainability</a></div>
+                                    <div class="col-sm-3"><a href="/subnational/partners-and-initiatives/nrg4sd" ><img src="/app/img/nrg4sd.png" alt="Image" class="img-responsive">The Network of Regional Governments for Sustainable Development</a></div>
+                                    <div class="col-sm-3"><a href="/subnational/partners-and-initiatives/urbio" ><img src="/app/img/urbio.png" alt="Image" class="img-responsive">Urban Biodiversity & Design</a></div>
+                                    <div class="col-sm-3"><a href="/subnational/partners-and-initiatives/stockholm-resilience-centre" ><img src="/app/img/src.png" alt="Image" class="img-responsive">Stockholm Resilience Centre</a></div>
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="row">
-                                    <div class="col-sm-3"><a href="/partners-and-initiatives/un-habitat" ><img src="/app/img/un-habitat.png" alt="Image" class="img-responsive">UN-HABITAT</a></div>
-                                    <div class="col-sm-3"><a href="/partners-and-initiatives/nrg4sd" ><img src="/app/img/nrg4sd.png" alt="Image" class="img-responsive">The Network of Regional Governments for Sustainable Development</a></div>
-                                    <div class="col-sm-3"><a href="/partners-and-initiatives/urbio" ><img src="/app/img/urbio.png" alt="Image" class="img-responsive">Urban Biodiversity & Design</a></div>
-                                    <div class="col-sm-3"><a href="/partners-and-initiatives/stockholm-resilience-centre" ><img src="/app/img/src.png" alt="Image" class="img-responsive">Stockholm Resilience Centre</a></div>
+                                    <div class="col-sm-3"><a href="/subnational/partners-and-initiatives/un-habitat" ><img src="/app/img/un-habitat.png" alt="Image" class="img-responsive">UN-HABITAT</a></div>
+                                    <div class="col-sm-3"><a href="/subnational/partners-and-initiatives/nrg4sd" ><img src="/app/img/nrg4sd.png" alt="Image" class="img-responsive">The Network of Regional Governments for Sustainable Development</a></div>
+                                    <div class="col-sm-3"><a href="/subnational/partners-and-initiatives/urbio" ><img src="/app/img/urbio.png" alt="Image" class="img-responsive">Urban Biodiversity & Design</a></div>
+                                    <div class="col-sm-3"><a href="/subnational/partners-and-initiatives/stockholm-resilience-centre" ><img src="/app/img/src.png" alt="Image" class="img-responsive">Stockholm Resilience Centre</a></div>
                                 </div>
                             </div>
                         </div>
@@ -266,7 +266,7 @@
                 <!-- <li><a href="http://www.linkedin.com/company/scbd" class="linkedin"></a></li> -->
                 <li><a href="https://www.facebook.com/UNBiodiversity" class="facebook"></a></li>
              <!--    <li><a href="https://plus.google.com/0000/posts" class="google"></a></li> -->
-                <li><a href="/database/news" class="rss"></a></li>
+                <li><a href="/subnational/database/news" class="rss"></a></li>
             </ul>
         </div>
     </footer>
