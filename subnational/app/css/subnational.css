@@ -1,0 +1,18 @@
+.title1 {
+	background: url(/subnational/app/img/sn-bkg-medium-gray.gif) repeat ;
+
+}
+.title2 {
+	background: url(/subnational/app/img/sn-bkg-medium-gray.gif) repeat ;
+}
+.title3 {
+	background: url(/subnational/app/img/sn-bkg-medium-gray.gif) repeat;
+}
+
+a {
+	color: #06C;
+}
+
+.header-actions li {
+	border-right: none;
+}

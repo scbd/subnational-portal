@@ -15,23 +15,24 @@ var oneDay = 86400000;
 
 app.configure(function() {
     app.set('port', process.env.PORT || 3000, '127.0.0.1');
-    app.use('/app/libs',         express.static(__dirname + '/app/libs', { maxAge: 28*oneDay }));
-    app.use('/app',              express.static(__dirname + '/app'));
+    app.use('/subnational/app/libs',         express.static(__dirname + '/subnational/app/libs', { maxAge: 28*oneDay }));
+    app.use('/subnational/app',              express.static(__dirname + '/subnational/app'));
 });
 
 // SET ROUTES
 
-app.get   ('/app/*', function(req, res) { res.send('404', 404); } );
+app.get   ('/subnational/app/*', function(req, res) { res.send('404', 404); } );
 
-app.get   ('/api/*', function(req, res) { proxy.proxyRequest(req, res, { changeOrigin: true, host: 'bch.cbd.int', port: 80 }); } );
-app.put   ('/api/*', function(req, res) { proxy.proxyRequest(req, res, { changeOrigin: true, host: 'bch.cbd.int', port: 80 }); } );
-app.post  ('/api/*', function(req, res) { proxy.proxyRequest(req, res, { changeOrigin: true, host: 'bch.cbd.int', port: 80 }); } );
-app.delete('/api/*', function(req, res) { proxy.proxyRequest(req, res, { changeOrigin: true, host: 'bch.cbd.int', port: 80 }); } );
+app.get   ('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int', secure: false } ); } );
+app.put   ('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int', secure: false } ); } );
+app.post  ('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int', secure: false } ); } );
+app.delete('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int', secure: false } ); } );
+
 
 // SET TEMPLATE
 
-app.get('/*', function(req, res) {
-	fs.readFile(__dirname + '/app/template.html', 'utf8', function (error, text) { 
+app.get('/subnational*', function(req, res) {
+	fs.readFile(__dirname + '/subnational/app/template.html', 'utf8', function (error, text) { 
 		res.send(text); 
 	});
 });

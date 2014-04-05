@@ -1,5 +1,5 @@
 {
-  "name": "accounts-cbd-int",
+  "name": "subnational-portal",
   "dependencies": {
     "angular": "~1.2.5",
     "angular-animate": "~1.2.5",

@@ -40,31 +40,31 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd   : 'app/directives/',
+            cwd   : 'subnational/app/directives/',
             src   : ['**/*'],
             dest  : 'app_build/directives'
           },
           {
             expand: true,
-            cwd   : 'app/views/',
+            cwd   : 'subnational/app/views/',
             src   : ['**/*'],
             dest  : 'app_build/views'
           },
           {
             expand: true,
-            cwd   : 'app/',
+            cwd   : 'subnational/app/',
             src   : ['template.html', 'template.html.js'],
             dest  : 'app_build/'
           },
           {
             expand: true,
-            cwd   : 'app/libs/',
+            cwd   : 'subnational/app/libs/',
             src   : ['**/*'],
             dest  : 'app_build/libs/'
           },
           {
             expand: true,
-            cwd   : 'app/img/',
+            cwd   : 'subnational/app/img/',
             src   : ['**/*'],
             dest  : 'app_build/img/'
           }
@@ -84,8 +84,8 @@ module.exports = function (grunt) {
     requirejs: {
       compile: {
         options: {
-          "mainConfigFile"  : "app/js/boot.js",
-          "baseUrl"         : "app/js",
+          "mainConfigFile"  : "subnational/app/js/boot.js",
+          "baseUrl"         : "subnational/app/js",
           "dir"             : "app_build/js",
           "modules"         : [{
             "name": "boot"
