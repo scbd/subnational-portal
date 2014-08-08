@@ -6,8 +6,9 @@
         <ul>
             <li ng-repeat="event in events">
             <a ng-href="{{event.url}}">
-            	{{event.title}}, {{event.dates}}, {{event.city}}</li>
-        	</a>
+                {{event.title}}, {{event.dates}}
+            </a>
+            </li>            
         </ul>
         <button type="button" class="btn btn-success right"><a href="/subnational/events">View all events</a></button>
     </div>

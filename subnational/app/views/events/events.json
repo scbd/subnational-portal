@@ -1,3 +1,25 @@
 {
-
+	"events": [
+		{
+			"title": "BION Conference",
+			"url": "http://www.bion-bonn.org/de",
+			"dates": "September 2014 "
+		},
+		{
+			"title": "CBD COP 12",
+			"url": "http://www.cbdcop12.kr/eng/sub/conference/welcome.php",
+			"dates": "6-17 October 2014 "
+		},
+		{
+			"title": "URBIO 2014",
+			"url": "http://www.urbio2014.kr/main/main.php",
+			"dates": "October 2014"
+		},
+		{
+			"title": "Biodiversity Summit for Cities and Subnational Governments",
+			"url": "http://biodivercity-summit.org/eng",
+			"dates": "October 2014"
+		}
+	]
 }
+
