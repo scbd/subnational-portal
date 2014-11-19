@@ -10,7 +10,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "postinstall": "node ./node_modules/.bin/bower install --config.interactive=false",
+    "postinstall": "bash ./node_modules/.bin/bower install --config.interactive=false",
     "start": "node server.js"
   }
 }
