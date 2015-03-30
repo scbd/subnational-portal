@@ -17,16 +17,13 @@ define(['app'], function (app) {
             when('/subnational/get-involved',
                 {   templateUrl: '/subnational/app/views/get-involved/get-involved.html',
                     resolve: { dependencies: resolveDependencies() } }).
-            when('/subnational/about',
-                { templateUrl: '/subnational/app/views/home/about.html',
-                    resolve: { dependencies: resolveDependencies() } }).
             when('/subnational/events',
                 { templateUrl: '/subnational/app/views/events/events.html',
                     resolve: { dependencies: resolveDependencies() } }).
-            when('/subnational/about/aichi-biodiversity-targets',
+            when('/subnational/aichi-biodiversity-targets',
                 { templateUrl: '/subnational/app/views/home/aichi-biodiversity-targets.html',
                     resolve: { dependencies: resolveDependencies() } }).
-            when('/subnational/about/cbd-plan-of-action',
+            when('/subnational/cbd-plan-of-action',
                 { templateUrl: '/subnational/app/views/home/cbd-plan-of-action.html',
                     resolve: { dependencies: resolveDependencies() } }).
             when('/subnational/resources',
