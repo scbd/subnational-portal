@@ -14,7 +14,7 @@ var proxy = new httpProxy.RoutingProxy();
 var oneDay = 86400000;
 
 app.configure(function() {
-    app.set('port', process.env.PORT || 3000, '127.0.0.1');
+    app.set('port', process.env.PORT || 8000, '127.0.0.1');
     app.use('/subnational/app/libs',         express.static(__dirname + '/subnational/app/libs', { maxAge: 28*oneDay }));
     app.use('/subnational/app',              express.static(__dirname + '/subnational/app'));
 });
