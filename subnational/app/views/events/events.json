@@ -1,16 +1,16 @@
 {
 	"events": [
 		{
-			"title": "ICLEI World Congress",
-			"url": "http://www.iclei.org/index.php?id=1083",
-			"dates": "8-12 April 2015",
-			"venu": "Seoul"
-		},
-		{
 			"title": "Resilient Cities 2015 - 6th Global Forum on Urban Resilience and Adaptation",
 			"url": "http://resilientcities2015.iclei.org/",
 			"dates": "8-10 June 2015",
 			"venu": "Bonn"
+		},
+		{
+			"title": "4th Assises of Decentralised Cooperation",
+			"url": "http://lra4dev.cor.europa.eu/portal/Pages/4th-Assises-of-decentralised-cooperation.aspx",
+			"dates": "1-2 June 2015",
+			"venu": " Brussels"
 		}
 	]
 }
