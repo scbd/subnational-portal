@@ -1,11 +1,11 @@
 'use strict';
 
-define([/*'angular'*/], function () {
+define(['angular'], function () {
 
 	var app = require('angular').module('app', ['ngRoute'])
 
 	app.config(['$controllerProvider', '$compileProvider', '$provide', function($controllerProvider, $compileProvider, $provide) {
-		  
+
 	//	app.controllerProvider = $controllerProvider;
 	//	app.routeProvider      = $routeProvider;
 	//	app.compileProvider    = $compileProvider;
@@ -18,5 +18,3 @@ define([/*'angular'*/], function () {
 
 	return app;
 });
-
-

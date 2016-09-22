@@ -1,17 +1,14 @@
 {
   "name": "subnational-portal",
   "dependencies": {
-    "angular": "~1.2.5",
-    "angular-animate": "~1.2.5",
-    "angular-cookies": "~1.2.5",
-    "angular-route": "~1.2.5",
-    "angular-sanitize": "~1.2.5",
-    "bootstrap": "~3.0.3",
-    "font-awesome": "~4.0.3",
-    "jquery": "~2.0.3",
-    "requirejs": "latest",
-    "requirejs-domready": "latest",
-    "requirejs-text": "latest",
-    "requirejs-plugins": "latest"
+    "angular": "1.4.7",
+    "angular-animate": "1.4.7",
+    "angular-cookies": "1.4.7",
+    "angular-route": "1.4.7",
+    "angular-sanitize": "1.4.7",
+    "requirejs": "2.2.0",
+    "bootstrap": "3.3.5",
+    "font-awesome": "4.3.0",
+    "jquery": "2.1.4"
   }
 }
