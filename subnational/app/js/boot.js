@@ -6,8 +6,8 @@ require.config({
     paths: {
         'angular'         : '../libs/angular/angular',
         'angular-route'   : '../libs/angular-route/angular-route',
-        'jquery'          : '../libs/jquery/jquery',
-        'bootstrap'       : '../libs/bootstrap/dist/js/bootstrap'
+        'jquery'          : '../libs/jquery/dist/jquery.min',
+        'bootstrap'       : '../libs/bootstrap/dist/js/bootstrap.min'
     },
     shim: {
         'angular'       : { 'deps': ['jquery'], 'exports': 'angular' },
