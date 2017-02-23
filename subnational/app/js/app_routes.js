@@ -137,6 +137,10 @@ define(['app'], function (app) {
             when('/subnational/help/404',
                 { templateUrl: '/subnational/app/views/help/404.html',
                     resolve: { dependencies: resolveDependencies() } }).
+            when('/subnational/draft-guidelines', {
+                templateUrl: '/subnational/app/views/guidelines/draft-guidelines.html',
+                resolveController: false
+            }).
             otherwise({redirectTo:'/subnational/help/404'});
 
         //==================================================
