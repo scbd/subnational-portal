@@ -122,8 +122,8 @@ define(['app'], function (app) {
             when('/subnational/partners-and-initiatives/mitin',
                 { templateUrl: '/subnational/app/views/partners-and-initiatives/mitin.html',
                     resolve: { dependencies: resolveDependencies() } }).
-            when('/subnational/partners-and-initiatives/nrg4sd',
-                { templateUrl: '/subnational/app/views/partners-and-initiatives/nrg4sd.html',
+            when('/subnational/partners-and-initiatives/regions4',
+                { templateUrl: '/subnational/app/views/partners-and-initiatives/regions4.html',
                     resolve: { dependencies: resolveDependencies() } }).
             when('/subnational/partners-and-initiatives/stockholm-resilience-centre',
                 { templateUrl: '/subnational/app/views/partners-and-initiatives/stockholm-resilience-centre.html',
