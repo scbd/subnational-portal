@@ -1,7 +1,8 @@
-FROM node:10.6.0-alpine
+FROM node:12.0-alpine
 
-RUN apk update && apk upgrade && \
-    apk add --no-cache git curl yarn
+RUN apk update  -q && \
+    apk upgrade -q && \
+    apk add     -q --no-cache bash git curl
 
 WORKDIR /usr/src/app
 
