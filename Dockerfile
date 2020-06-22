@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY package.json bower.json .bowerrc .npmrc ./
 
-RUN apk add git curl && \
+RUN apk add git curl yarn && \
     yarn install -q
 
 COPY . ./
