@@ -1,11 +1,13 @@
-FROM node:6.9
+FROM node:10.6.0-alpine
+
+RUN apk update && apk upgrade && \
+    apk add --no-cache git curl yarn
 
 WORKDIR /usr/src/app
 
 COPY package.json bower.json .bowerrc .npmrc ./
 
-RUN apk add git curl yarn && \
-    yarn install -q
+RUN yarn install
 
 COPY . ./
 
