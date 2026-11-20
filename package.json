@@ -7,7 +7,7 @@
     "http-proxy": "1.15.2"
   },
   "engines": {
-    "engine": "node >= 6.0.0"
+    "node": "^22.23.4 || ^24.22.1 || >=26.12.1"
   },
   "scripts": {
     "postinstall": "./node_modules/.bin/bower install --allow-root --config.interactive=false",
