@@ -1,0 +1,90 @@
+# Secrets required:
+#
+# Registry (org-level):
+#   DOCKERHUB_USERNAME  - Docker Hub username
+#   DOCKERHUB_TOKEN     - Docker Hub access token
+
+name: CI
+
+on:
+  push:
+    branches: ['**']
+    tags: ['[0-9]*', 'v[0-9]*']
+  pull_request:
+    branches: [master, dev]
+
+permissions:
+  contents: read
+
+env:
+  IMAGE_NAME: scbd/subnational.cbd.int
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Logic:
+      #   version tag (vX.Y.Z / X.Y.Z) → tags=<version> + latest,       push=true
+      #   dev                          → tags=dev,                      push=true
+      #   other branches / PRs         → tags=build-<sha>,              push=false
+      - name: Resolve image tags
+        id: meta
+        run: |
+          SHORT_SHA="${GITHUB_SHA::7}"
+          IMAGE="${{ env.IMAGE_NAME }}"
+          REF="${GITHUB_REF}"
+
+          if [[ "${REF}" =~ ^refs/tags/v?([0-9]+(\.[0-9]+)*)$ ]]; then
+            TAG="${BASH_REMATCH[1]}"
+            echo "tags<<EOF"          >> $GITHUB_OUTPUT
+            echo "${IMAGE}:${TAG}"    >> $GITHUB_OUTPUT
+            echo "${IMAGE}:latest"    >> $GITHUB_OUTPUT
+            echo "EOF"                >> $GITHUB_OUTPUT
+            echo "push=true"          >> $GITHUB_OUTPUT
+
+          elif [[ "${REF}" == "refs/heads/dev" ]]; then
+            echo "tags=${IMAGE}:dev"  >> $GITHUB_OUTPUT
+            echo "push=true"          >> $GITHUB_OUTPUT
+
+          else
+            echo "tags=${IMAGE}:build-${SHORT_SHA}" >> $GITHUB_OUTPUT
+            echo "push=false"                        >> $GITHUB_OUTPUT
+          fi
+
+      - name: Log in to Docker Hub
+        if: steps.meta.outputs.push == 'true' && github.repository_owner == 'scbd'
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build image
+        uses: docker/build-push-action@v6
+        with:
+          build-args: COMMIT=${{ github.sha }}
+          load: true
+          tags: ci-build:local
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Test image
+        run: |
+          docker run --name subnational -d -p 8000:8000 ci-build:local
+          sleep 10
+          docker exec subnational curl --retry 10 --retry-delay 5 -v http://localhost:8000/
+
+      - name: Push image
+        if: steps.meta.outputs.push == 'true' && github.repository_owner == 'scbd'
+        run: |
+          while IFS= read -r tag; do
+            [[ -z "$tag" ]] && continue
+            docker tag ci-build:local "$tag"
+            docker push "$tag"
+          done <<< "${{ steps.meta.outputs.tags }}"
