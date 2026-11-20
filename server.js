@@ -17,8 +17,8 @@ app.use('/subnational/app', express.static(__dirname + '/subnational/app'));
 
 var proxy = httpProxy.createProxyServer({});
 
-app.get   ('/subnational/app/*', function(req, res) { res.send('404', 404); } );
-app.get   ('/public/*',   function(req, res) { res.send('404', 404); } );
+app.get   ('/subnational/app/*', function(req, res) { res.status(404).send('404'); } );
+app.get   ('/public/*',   function(req, res) { res.status(404).send('404'); } );
 app.all   ('/api/*',      function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int', secure: false } ); } );
 
 // Configure index.html
