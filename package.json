@@ -12,6 +12,7 @@
   },
   "scripts": {
     "postinstall": "./node_modules/.bin/bower install --allow-root --config.interactive=false",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --test test/*.test.js"
   }
 }
